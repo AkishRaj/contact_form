@@ -2,89 +2,101 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000;
-  padding-bottom: 100px;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
 }
 
 #contact {
-  width: 70%;
-  height: 8%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
 }
 
 .section-header {
   text-align: center;
-  margin: 0 auto;
   padding: 40px 0;
   font: 300 60px 'Oswald', sans-serif;
-  color: #fff;
   text-transform: uppercase;
   letter-spacing: 6px;
 }
 
 .contact-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-  max-width: 840px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 90%;
+  max-width: 1000px;
 }
 
-/* Left contact page */
 .form-horizontal {
-  /*float: left;*/
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   max-width: 400px;
-  font-family: 'Lato';
-  font-weight: 400;
+  width: 100%;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.form-control, 
-textarea {
-  max-width: 400px;
+.form-control {
+  padding: 10px;
   background-color: #000;
   color: #fff;
-  letter-spacing: 1px;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+label {
+  color: #ccc;
+  font-size: 14px;
 }
 
 .send-button {
   margin-top: 15px;
-  height: 34px;
-  width: 400px;
-  overflow: hidden;
-  transition: all .2s ease-in-out;
+  width: 100%;
+  text-align: center;
 }
 
 .alt-send-button {
-  width: 400px;
-  height: 34px;
-  transition: all .2s ease-in-out;
-}
-
-.send-text {
-  display: block;
-  margin-top: 10px;
-  font: 700 12px 'Lato', sans-serif;
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font: 700 14px 'Lato', sans-serif;
   letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .alt-send-button:hover {
-  transform: translate3d(0px, -29px, 0px);
+  transform: translateY(-3px);
+  background-color: #555;
 }
 
-/* Begin Right Contact Page */
+.send-text {
+  display: inline-block;
+  margin-left: 10px;
+}
+
 .direct-contact-container {
   max-width: 400px;
+  padding: 20px;
 }
 
-/* Location, Phone, Email Section */
 .contact-list {
   list-style-type: none;
-  margin-left: -30px;
-  padding-right: 20px;
+  padding: 0;
 }
 
 .list-item {
-  line-height: 4;
+  line-height: 3;
   color: #aaa;
 }
 
@@ -92,35 +104,41 @@ textarea {
   font: 300 18px 'Lato', sans-serif;
   letter-spacing: 1.9px;
   color: #bbb;
-}
-
-.place {
-  margin-left: 62px;
-}
-
-.phone {
-  margin-left: 56px;
-}
-
-.gmail {
-  margin-left: 53px;
+  margin-left: 10px;
 }
 
 .contact-text a {
   color: #bbb;
   text-decoration: none;
-  transition-duration: 0.2s;
+  transition: color 0.2s;
 }
 
 .contact-text a:hover {
   color: #fff;
-  text-decoration: none;
 }
 
+.place {
+  margin-left: 20px;
+}
+.phone {
+  margin-left: 15px;
+}
+.gmail {
+  margin-left: 15px;
+}
 
+@media screen and (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 
-@media screen and (max-width: 410px) {
-  .send-button {
-    width: 99%;
+  .form-horizontal, .direct-contact-container {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .alt-send-button {
+    height: 44px;
   }
 }
